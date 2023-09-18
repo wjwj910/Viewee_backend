@@ -30,18 +30,8 @@ out/
 .vscode/
 
 .gradle
-### Ignore entire build/ folder ###
-<<<<<<< HEAD
-build/classes
-build/generated
-build/reports
-build/resources
-build/test-results
-build/tmp
-build/resolvedMainClassName
-=======
+### Ignore entire build/ ###
 build
->>>>>>> 4e9b7e7 (commit)
 
 ### api key ###
 application.properties
