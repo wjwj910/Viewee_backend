@@ -20,7 +20,6 @@ public class GPTController {
         GPT reset = new GPT(GPT.GPT3_5, GPT.SYSTEM_ROLE_INTERVIEWER_SETTING, GPT.OPEN_API_KEY);
         reset.clearMsgHistory();
 
-
         GPT gpt = new GPT(GPT.GPT3_5, GPT.SYSTEM_ROLE_INTERVIEWER_SETTING, GPT.OPEN_API_KEY);
 
         String receivedMsg = String.format("이름:'%s', 생년월일:'%s', 학력:'%s', 경력:'%s', 지원 직무:'%s', 자격증:'%s', 자기소개서:'%s'",
