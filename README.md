@@ -4,7 +4,7 @@
 ## 개발 환경
 * Java 17
 * springboot 3.1.0
-* CLOUDTYPE
+* AWS EC2
 
 ## 기능
 * open-ai chat-gpt 연동  
