@@ -68,26 +68,6 @@ public class GPTController {
 
     }
 
-    @PostMapping("gpt/overrall_feedback")
-    public ResponseEntity<?> overrall_feedback(@RequestBody feedbackDTO feedbackDTO){
-
-        GPT gpt = new GPT(GPT.GPT3_5, GPT.OVERRALL_FEEDBACK, GPT.OPEN_API_KEY);
-        String receivedMsg = String.format("총평 피드백:'%s'", feedbackDTO.getOverrallFeed());
-
-        ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
-        String responseMsg = "";
-
-        receivedMsg = receivedMsg.trim();
-        responseMsg = gpt.chatToGPT(receivedMsg);
-
-        apiResponseDTO.addResponseMsg("overrall_feedback", responseMsg);
-
-        log.debug("receivedMsg: {}", receivedMsg);
-        log.debug("responseMsg: {}", responseMsg);
-
-        return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
-    }
-
     @PostMapping("gpt/answer_feedback")
     public ResponseEntity<?> answer_feedback(@RequestBody feedbackDTO feedbackDTO){
 
@@ -106,7 +86,27 @@ public class GPTController {
         receivedMsg = receivedMsg.trim();
         responseMsg = gpt.chatToGPT(receivedMsg);
 
-        apiResponseDTO.addResponseMsg("feedback", responseMsg)      ;
+        apiResponseDTO.addResponseMsg("feedback", responseMsg);
+
+        log.debug("receivedMsg: {}", receivedMsg);
+        log.debug("responseMsg: {}", responseMsg);
+
+        return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
+    }
+
+    @PostMapping("gpt/re_Interview")
+    public ResponseEntity<?> re_Interview(@RequestBody interviewDTO interviewDTO){
+
+        GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_INTERVIEW, GPT.OPEN_API_KEY);
+        String receivedMsg = String.format("답변:'%s'", interviewDTO.getAnswer());
+
+        ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
+        String responseMsg = "";
+
+        receivedMsg = receivedMsg.trim();
+        responseMsg = gpt.chatToGPT(receivedMsg);
+
+        apiResponseDTO.addResponseMsg("question", responseMsg);
 
         log.debug("receivedMsg: {}", receivedMsg);
         log.debug("responseMsg: {}", responseMsg);
