@@ -11,6 +11,7 @@ import java.util.Map;
 public class ApiResponseDTO {
 
     private Map<String, String> responseMsg;
+    private Object responseMap;
 
     public ApiResponseDTO() {
         responseMsg = new LinkedHashMap<>();

@@ -10,4 +10,6 @@ public class feedbackDTO {
     private String overrallFeed;
     private String textSentimentAnalysisData;
     private String facialExpressionAnalysisData;
+
+    private String reAnswer;
 }
