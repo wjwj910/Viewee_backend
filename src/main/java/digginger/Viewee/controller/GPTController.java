@@ -114,10 +114,14 @@ public class GPTController {
         return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
     }
 
-    @PostMapping("gpt/re_answer_feedback")
-    public ResponseEntity<?> re_answer_feedback(@RequestBody feedbackDTO feedbackDTO){
 
-        GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_ANSWER_FEEDBACK, GPT.OPEN_API_KEY);
+
+
+
+    @PostMapping("gpt/re_answer_feedback_1")
+    public ResponseEntity<?> re_answer_feedback_1(@RequestBody feedbackDTO feedbackDTO){
+
+        GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_FEEDBACK_1, GPT.OPEN_API_KEY);
 
         // 다시 작성된 답변을 받아서 처리하는 로직입니다.
         String receivedMsg = String.format("reAnswer : '%s', textSentimentAnalysisData : '%s', facialExpressionAnalysisData: '%s',answerFeed : '%s', overrallFeed : '%s'",
@@ -142,5 +146,122 @@ public class GPTController {
         return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
     }
 
+
+
+
+
+
+
+    @PostMapping("gpt/re_answer_feedback_2")
+    public ResponseEntity<?> re_answer_feedback_2(@RequestBody feedbackDTO feedbackDTO){
+
+        GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_FEEDBACK_2, GPT.OPEN_API_KEY);
+
+        // 다시 작성된 답변을 받아서 처리하는 로직입니다.
+        String receivedMsg = String.format("reAnswer : '%s', textSentimentAnalysisData : '%s', facialExpressionAnalysisData: '%s',answerFeed : '%s', overrallFeed : '%s'",
+                feedbackDTO.getReAnswer(),
+                feedbackDTO.getTextSentimentAnalysisData(),
+                feedbackDTO.getFacialExpressionAnalysisData(),
+                feedbackDTO.getAnswerFeed(),
+                feedbackDTO.getOverrallFeed()
+        );
+
+        ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
+        String responseMsg = "";
+
+        receivedMsg = receivedMsg.trim();
+        responseMsg = gpt.chatToGPT(receivedMsg);
+
+        apiResponseDTO.addResponseMsg("feedback", responseMsg);
+
+        log.debug("receivedMsg: {}", receivedMsg);
+        log.debug("responseMsg: {}", responseMsg);
+
+        return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
+    }
+
+
+
+    @PostMapping("gpt/re_answer_feedback_3")
+    public ResponseEntity<?> re_answer_feedback_3(@RequestBody feedbackDTO feedbackDTO){
+
+        GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_FEEDBACK_3, GPT.OPEN_API_KEY);
+
+        // 다시 작성된 답변을 받아서 처리하는 로직입니다.
+        String receivedMsg = String.format("reAnswer : '%s', textSentimentAnalysisData : '%s', facialExpressionAnalysisData: '%s',answerFeed : '%s', overrallFeed : '%s'",
+                feedbackDTO.getReAnswer(),
+                feedbackDTO.getTextSentimentAnalysisData(),
+                feedbackDTO.getFacialExpressionAnalysisData(),
+                feedbackDTO.getAnswerFeed(),
+                feedbackDTO.getOverrallFeed()
+        );
+
+        ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
+        String responseMsg = "";
+
+        receivedMsg = receivedMsg.trim();
+        responseMsg = gpt.chatToGPT(receivedMsg);
+
+        apiResponseDTO.addResponseMsg("feedback", responseMsg);
+
+        log.debug("receivedMsg: {}", receivedMsg);
+        log.debug("responseMsg: {}", responseMsg);
+
+        return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
+    }
+    @PostMapping("gpt/re_answer_feedback_4")
+    public ResponseEntity<?> re_answer_feedback_4(@RequestBody feedbackDTO feedbackDTO){
+
+        GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_FEEDBACK_4, GPT.OPEN_API_KEY);
+
+        // 다시 작성된 답변을 받아서 처리하는 로직입니다.
+        String receivedMsg = String.format("reAnswer : '%s', textSentimentAnalysisData : '%s', facialExpressionAnalysisData: '%s',answerFeed : '%s', overrallFeed : '%s'",
+                feedbackDTO.getReAnswer(),
+                feedbackDTO.getTextSentimentAnalysisData(),
+                feedbackDTO.getFacialExpressionAnalysisData(),
+                feedbackDTO.getAnswerFeed(),
+                feedbackDTO.getOverrallFeed()
+        );
+
+        ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
+        String responseMsg = "";
+
+        receivedMsg = receivedMsg.trim();
+        responseMsg = gpt.chatToGPT(receivedMsg);
+
+        apiResponseDTO.addResponseMsg("feedback", responseMsg);
+
+        log.debug("receivedMsg: {}", receivedMsg);
+        log.debug("responseMsg: {}", responseMsg);
+
+        return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
+    }
+    @PostMapping("gpt/re_answer_feedback_5")
+    public ResponseEntity<?> re_answer_feedback_5(@RequestBody feedbackDTO feedbackDTO){
+
+        GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_FEEDBACK_5, GPT.OPEN_API_KEY);
+
+        // 다시 작성된 답변을 받아서 처리하는 로직입니다.
+        String receivedMsg = String.format("reAnswer : '%s', textSentimentAnalysisData : '%s', facialExpressionAnalysisData: '%s',answerFeed : '%s', overrallFeed : '%s'",
+                feedbackDTO.getReAnswer(),
+                feedbackDTO.getTextSentimentAnalysisData(),
+                feedbackDTO.getFacialExpressionAnalysisData(),
+                feedbackDTO.getAnswerFeed(),
+                feedbackDTO.getOverrallFeed()
+        );
+
+        ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
+        String responseMsg = "";
+
+        receivedMsg = receivedMsg.trim();
+        responseMsg = gpt.chatToGPT(receivedMsg);
+
+        apiResponseDTO.addResponseMsg("feedback", responseMsg);
+
+        log.debug("receivedMsg: {}", receivedMsg);
+        log.debug("responseMsg: {}", responseMsg);
+
+        return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
+    }
 }
 
