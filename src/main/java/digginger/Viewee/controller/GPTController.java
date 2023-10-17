@@ -94,26 +94,6 @@ public class GPTController {
         return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
     }
 
-    @PostMapping("gpt/re_Interview_Setting")
-    public ResponseEntity<?> re_Interview_Setting(@RequestBody interviewDTO interviewDTO){
-
-        GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_INTERVIEW_SETTING, GPT.OPEN_API_KEY);
-        String receivedMsg = String.format("답변:'%s'", interviewDTO.getAnswer());
-
-        ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
-        String responseMsg = "";
-
-        receivedMsg = receivedMsg.trim();
-        responseMsg = gpt.chatToGPT(receivedMsg);
-
-        apiResponseDTO.addResponseMsg("question", responseMsg);
-
-        log.debug("receivedMsg: {}", receivedMsg);
-        log.debug("responseMsg: {}", responseMsg);
-
-        return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
-    }
-
     @PostMapping("gpt/re_Interview")
     public ResponseEntity<?> re_Interview(@RequestBody interviewDTO interviewDTO){
 
@@ -133,7 +113,6 @@ public class GPTController {
 
         return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
     }
-
 
 
 
