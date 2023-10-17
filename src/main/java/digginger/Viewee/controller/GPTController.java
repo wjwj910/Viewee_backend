@@ -267,7 +267,7 @@ public class GPTController {
 
 
 
-    @PostMapping("gpt/re_interview/feedback")
+    @PostMapping("gpt/re_Interview/feedback")
     public ResponseEntity<?> re_interview_feedback(@RequestBody feedbackDTO feedbackDTO){
 
         GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_INTERVIEW_FEEDBACK, GPT.OPEN_API_KEY);
