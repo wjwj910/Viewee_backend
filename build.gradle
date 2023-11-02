@@ -35,7 +35,7 @@ dependencies {
 	implementation group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.4'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
-	implementation 'com.google.cloud:google-cloud-aiplatform:2.7.0'
+	//implementation 'com.google.cloud:google-cloud-aiplatform:2.7.0'
 }
 
 tasks.named('test') {
