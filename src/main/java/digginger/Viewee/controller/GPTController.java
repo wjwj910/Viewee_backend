@@ -116,18 +116,28 @@ public class GPTController {
         GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_INTERVIEW, GPT.OPEN_API_KEY);
         String receivedMsg = String.format("답변:'%s'", interviewDTO.getAnswer());
 
-        ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
+        //ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
         String responseMsg = "";
 
         receivedMsg = receivedMsg.trim();
         responseMsg = gpt.chatToGPT(receivedMsg);
 
-        apiResponseDTO.addResponseMsg("question", responseMsg);
+        //apiResponseDTO.addResponseMsg("question", responseMsg);
 
         log.debug("receivedMsg: {}", receivedMsg);
         log.debug("responseMsg: {}", responseMsg);
 
-        return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
+        final String quest_test =
+                "#1:당신이 졸업 작품과 인턴 경험을 통해 배운 주요 역량은 무엇이며, 어떻게 이를 이번 포지션에서 활용할 것인가요?\n" +
+                "#2:시계와 수저통 제품을 성공적으로 출시한 경험 중에서 특히 도전적이었던 순간은 무엇이었나요? 어떻게 극복했나요?\n" +
+                "#3:더 자세히 제품 디자인 및 개발 프로세스에서 어떤 역할을 담당했나요? 프로젝트 팀과의 협업 경험은 어떠했나요?\n" +
+                "#4:디자이너로서 어떻게 스스로를 계속 발전시키려고 노력하고 있는지 알려주세요.\n" +
+                "#5:디자인 분야에서 무엇이 당신을 가장 열정적으로 만드는 요소인가요?";
+
+        Map<String, String> response = new HashMap<>();
+        response.put("questions", quest_test);
+
+        return ResponseEntity.ok(response);
     }
 
 
