@@ -56,6 +56,7 @@ public class GPTController {
 
         Map<String, String> response = new HashMap<>();
         response.put("questions", quest_test);
+        gpt.addMsg("assistant", quest_test);
         //return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
         return ResponseEntity.ok(response);
 
@@ -136,7 +137,7 @@ public class GPTController {
 
         Map<String, String> response = new HashMap<>();
         response.put("questions", quest_test);
-
+        gpt.addMsg("assistant", quest_test);
         return ResponseEntity.ok(response);
     }
 
