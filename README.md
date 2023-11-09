@@ -5,8 +5,8 @@
 * Java 17
 * springboot 3.1.0
 * AWS EC2
+* GPT API (OpenAI)
 
 ## 기능
-* open-ai chat-gpt 연동  
-  연동 방법 https://platform.openai.com/docs/api-reference/authentication 참조
-* gpt에게 메시지 전송 시 기존 대화에 메시지 concat 후 전송
+* OpenAI의 GPT API를 사용한 모의 면접
+* GPT API reference : https://platform.openai.com/docs/api-reference/introduction
