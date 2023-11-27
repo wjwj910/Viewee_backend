@@ -35,14 +35,14 @@ public class GPTController {
                 userInfoDTO.getResume()
         );
 
-        //ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
+        ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
         String responseMsg = "";
 
 
         receivedMsg = receivedMsg.trim();
         responseMsg = gpt.chatToGPT(receivedMsg);
 
-        //apiResponseDTO.addResponseMsg("questions", responseMsg);
+        apiResponseDTO.addResponseMsg("questions", responseMsg);
 
         log.debug("receivedMsg: {}", receivedMsg);
         log.debug("responseMsg: {}", responseMsg);
@@ -54,11 +54,11 @@ public class GPTController {
                 "#4:디자이너로서 어떻게 스스로를 계속 발전시키려고 노력하고 있는지 알려주세요.\n" +
                 "#5:디자인 분야에서 무엇이 당신을 가장 열정적으로 만드는 요소인가요?";
 
-        Map<String, String> response = new HashMap<>();
-        response.put("questions", quest_test);
-        gpt.addMsg("assistant", quest_test);
-        //return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
-        return ResponseEntity.ok(response);
+        //Map<String, String> response = new HashMap<>();
+        //response.put("questions", quest_test);
+        //gpt.addMsg("assistant", quest_test);
+        return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
+        //return ResponseEntity.ok(response);
 
     }
 
@@ -117,13 +117,13 @@ public class GPTController {
         GPT gpt = new GPT(GPT.GPT3_5, GPT.RE_INTERVIEW, GPT.OPEN_API_KEY);
         String receivedMsg = String.format("답변:'%s'", interviewDTO.getAnswer());
 
-        //ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
+        ApiResponseDTO apiResponseDTO = new ApiResponseDTO();
         String responseMsg = "";
 
         receivedMsg = receivedMsg.trim();
         responseMsg = gpt.chatToGPT(receivedMsg);
 
-        //apiResponseDTO.addResponseMsg("question", responseMsg);
+        apiResponseDTO.addResponseMsg("question", responseMsg);
 
         log.debug("receivedMsg: {}", receivedMsg);
         log.debug("responseMsg: {}", responseMsg);
@@ -135,10 +135,11 @@ public class GPTController {
                 "#4:디자이너로서 어떻게 스스로를 계속 발전시키려고 노력하고 있는지 알려주세요.\n" +
                 "#5:디자인 분야에서 무엇이 당신을 가장 열정적으로 만드는 요소인가요?";
 
-        Map<String, String> response = new HashMap<>();
-        response.put("questions", quest_test);
-        gpt.addMsg("assistant", quest_test);
-        return ResponseEntity.ok(response);
+        //Map<String, String> response = new HashMap<>();
+        //response.put("questions", quest_test);
+        //gpt.addMsg("assistant", quest_test);
+        //return ResponseEntity.ok(response);
+        return ResponseEntity.ok(apiResponseDTO.getResponseMsg());
     }
 
 
